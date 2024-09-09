@@ -76,12 +76,15 @@ float fsquare(float a)
 		apply_##name##_window(data, n, beta); \
 	}
 
+#define RIGHT_SHIFT(i, j) (int)((unsigned int)(i) >> (unsigned int)(j))
+
 #define FREQ_BASE_SETUP \
-	int i, j; \
-	float angle; \
-	int midn = n >> 1; \
+	int i; \
+	int j; \
+	float angle = 0.0F; \
+	int midn = RIGHT_SHIFT(n, 1); \
 	float freq = TWO_PI / (float)n; \
-	for (i = 0, j = n - 1, angle = 0.0; i <= midn; i++, j--, angle += freq)
+	for (i = 0, j = n - 1; i <= midn; i++, j--, angle += freq)
 
 GENERATE_WINDOW_AT(rectangular, return 1.0;)
 GENERATE_APPLY_WINDOW(rectangular, FREQ_BASE_SETUP)
@@ -117,11 +120,12 @@ GENERATE_APPLY_WINDOW(blackman4, FREQ_BASE_SETUP)
 GENERATE_MAKE_WINDOW(blackman4)
 
 #define RATE_BASE_SETUP \
-	int i, j; \
-	float angle; \
-	int midn = n >> 1; \
+	int i; \
+	int j; \
+	float angle = 1.0F; \
+	int midn = RIGHT_SHIFT(n, 1); \
 	float rate = 1.0 / (float)midn; \
-	for (i = 0, j = n - 1, angle = 1.0; i <= midn; i++, j--, angle -= rate)
+	for (i = 0, j = n - 1; i <= midn; i++, j--, angle -= rate)
 
 GENERATE_WINDOW_AT(bartlett, return angle;)
 GENERATE_APPLY_WINDOW(bartlett, RATE_BASE_SETUP)
@@ -151,8 +155,9 @@ GENERATE_APPLY_WINDOW_BETA(gaussian, RATE_BASE_SETUP)
 GENERATE_MAKE_WINDOW_BETA(gaussian)
 
 #define MID_BASE_SETUP \
-	int i, j; \
-	int midn = n >> 1; \
+	int i; \
+	int j; \
+	int midn = RIGHT_SHIFT(n, 1); \
 	int midp1 = (n + 1) / 2; \
 	int midm1 = (n - 1) / 2; \
 	for (i = 0, j = n - 1; i <= midn; i++, j--)
@@ -170,8 +175,9 @@ GENERATE_APPLY_WINDOW_B(
 GENERATE_MAKE_WINDOW(parzen)
 
 #define COUNTER_BASE_SETUP \
-	int i, j; \
-	int midn = n >> 1; \
+	int i; \
+	int j; \
+	int midn = RIGHT_SHIFT(n, 1); \
 	for (i = 0, j = n - 1; i <= midn; i++, j--)
 
 GENERATE_APPLY_WINDOW_B(
@@ -184,7 +190,7 @@ GENERATE_MAKE_WINDOW(riemann)
 GENERATE_APPLY_WINDOW_B(
 	exponential,
 	float expsum = 1.0;
-	float expn = log(2) / (float)((n >> 1) + 1.0);
+	float expn = log(2) / (float)(RIGHT_SHIFT(n, 1) + 1.0);
 	COUNTER_BASE_SETUP, float scalar = expsum - 1.0;
 	expsum *= expn;)
 GENERATE_MAKE_WINDOW(exponential)
@@ -196,7 +202,7 @@ GENERATE_APPLY_WINDOW_BETA_B(
 	float scalar = (i >= c) ? 1.0 : 0.5 * (1.0 - cosf(PI * i / c));)
 GENERATE_MAKE_WINDOW_BETA(tukey)
 
-#define EOS(c) (c == ' \0')
+#define EOS(c) ((c) == ' \0')
 
 int streq_ci(const char *a, const char *b)
 {
@@ -336,7 +342,7 @@ void apply_typed_window(enum WINDOW_TYPE type, float *data, int n, float beta)
 		apply_tukey_window(data, n, beta);
 		break;
 	default:
-		fmemset(data, n, 1.0);
+		fmemset(data, n, 1.0F);
 	}
 }
 
@@ -392,6 +398,6 @@ void make_typed_window(enum WINDOW_TYPE type, float *data, int n, float beta)
 		make_tukey_window(data, n, beta);
 		break;
 	default:
-		fmemset(data, n, 1.0);
+		fmemset(data, n, 1.0F);
 	}
 }

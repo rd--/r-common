@@ -1,5 +1,5 @@
-#ifndef _COMMON_COLOUR_RGBA_H
-#define _COMMON_COLOUR_RGBA_H
+#ifndef R_COMMON_C_COLOUR_RGBA_H
+#define R_COMMON_C_COLOUR_RGBA_H
 
 #include "float.h"
 

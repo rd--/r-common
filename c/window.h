@@ -1,5 +1,5 @@
-#ifndef _COMMON_WINDOW_H
-#define _COMMON_WINDOW_H
+#ifndef R_COMMON_C_WINDOW_H
+#define R_COMMON_C_WINDOW_H
 
 typedef void(window_f_t)(float *, int);
 typedef void(beta_window_f_t)(float *, int, float);

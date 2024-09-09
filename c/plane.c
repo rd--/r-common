@@ -29,17 +29,19 @@ enum side half_space(plane p, v3 v)
 	f32 d = point_plane_distance(p, v);
 	if (d == 0.0) {
 		return coincide;
-	} else if (d > 0.0) {
+	}
+	if (d > 0.0F) {
 		return front;
-	} else if (d < 0.0) {
+	}
+	if (d < 0.0F) {
 		return back;
-	} else if (isnan(d)) {
-		fprintf(stderr, "half_space: nan: %f\n", d);
-		return coincide;
-	} else {
-		fprintf(stderr, "half_space: impossible condition: %f\n", d);
+	}
+	if (isnan(d)) {
+		(void)fprintf(stderr, "half_space: nan: %f\n", d);
 		return coincide;
 	}
+	(void)fprintf(stderr, "half_space: impossible condition: %f\n", d);
+	return coincide;
 }
 
 /* Returns #t iff p0 and p1 are not on the same side of plane. */
@@ -67,7 +69,7 @@ v3 intersection(plane p, v3 v0, v3 v1)
 
 v3 in_to_r(v3 i, v3 n)
 {
-	return v3_add(v3_mul(v3_dot(v3_mul(-1.0, i), n) * 2.0, n), i);
+	return v3_add(v3_mul(v3_dot(v3_mul(-1.0F, i), n) * 2.0F, n), i);
 }
 
 /*

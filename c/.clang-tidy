@@ -1,0 +1,14 @@
+---
+Checks:          '*,
+		 -altera-id-dependent-backward-branch,
+		 -altera-struct-pack-align,
+		 -altera-unroll-loops,
+		 -bugprone-easily-swappable-parameters,
+		 -clang-analyzer-security.insecureAPI.DeprecatedOrUnsafeBufferHandling,
+		 -cppcoreguidelines-avoid-magic-numbers,
+		 -llvm-header-guard,
+		 -llvmlibc-restrict-system-libc-headers,
+		 -readability-identifier-length,
+		 -readability-magic-numbers,
+		 '
+...

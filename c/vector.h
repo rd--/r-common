@@ -1,5 +1,5 @@
-#ifndef _VECTOR_H
-#define _VECTOR_H
+#ifndef R_COMMON_C_VECTOR_H
+#define R_COMMON_C_VECTOR_H
 
 #include "float.h"
 

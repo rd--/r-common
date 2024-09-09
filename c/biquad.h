@@ -1,5 +1,5 @@
-#ifndef _COMMON_BIQUAD_H
-#define _COMMON_BIQUAD_H
+#ifndef R_COMMON_C_BIQUAD_H
+#define R_COMMON_C_BIQUAD_H
 
 #define R double
 

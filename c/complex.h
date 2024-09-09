@@ -1,5 +1,5 @@
-#ifndef _COMMON_COMPLEX_H
-#define _COMMON_COMPLEX_H
+#ifndef R_COMMON_C_COMPLEX_H
+#define R_COMMON_C_COMPLEX_H
 
 #include "float.h"
 
@@ -15,7 +15,7 @@ f32 c32_mod(c32 a);
 c32 c32_conj(c32 a);
 c32 c32_square(c32 z);
 c32 c32_cube(c32 z);
-c32 c32_one = { 1.0, 0.0 };
+const c32 c32_one = { 1.0F, 0.0F };
 
 typedef struct {
 	f64 r, i;
@@ -29,6 +29,6 @@ f64 c64_mod(c64 a);
 c64 c64_conj(c64 a);
 c64 c64_square(c64 z);
 c64 c64_cube(c64 z);
-c64 c64_one = { 1.0, 0.0 };
+const c64 c64_one = { 1.0, 0.0 };
 
 #endif

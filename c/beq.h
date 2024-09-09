@@ -1,5 +1,5 @@
-#ifndef _COMMON_BEQ_H
-#define _COMMON_BEQ_H
+#ifndef R_COMMON_C_BEQ_H
+#define R_COMMON_C_BEQ_H
 
 #include "filter.h"
 

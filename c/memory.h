@@ -1,5 +1,5 @@
-#ifndef _COMMON_MEMORY_H
-#define _COMMON_MEMORY_H
+#ifndef R_COMMON_C_MEMORY_H
+#define R_COMMON_C_MEMORY_H
 
 #include <stddef.h>
 #include <stdio.h>
@@ -12,7 +12,7 @@ inline void *xmalloc(size_t size)
 {
 	void *p = malloc(size);
 	if (p == NULL) {
-		fprintf(stderr, "malloc() failed: %ld\n", (long)size);
+		(void)fprintf(stderr, "malloc() failed: %ld\n", (long)size);
 		FAILURE;
 	}
 	return p;
@@ -61,9 +61,8 @@ inline void *xmemset(void *s, int c, size_t n)
 inline float *fmalloc(size_t n)
 {
 	float *d = (float *)xmalloc(n * sizeof(float));
-	size_t i;
-	for (i = 0; i < n; i++) {
-		d[i] = 0.0;
+	for (size_t i = 0; i < n; i++) {
+		d[i] = 0.0F;
 	}
 	return d;
 }
@@ -75,8 +74,7 @@ inline void fmemset(float *data, int n, float value)
 		FAILURE;
 	}
 	{
-		int i;
-		for (i = 0; i < n; i++) {
+		for (int i = 0; i < n; i++) {
 			data[i] = value;
 		}
 	}

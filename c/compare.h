@@ -1,5 +1,5 @@
-#ifndef _COMMON_COMPARE_H
-#define _COMMON_COMPARE_H
+#ifndef R_COMMON_C_COMPARE_H
+#define R_COMMON_C_COMPARE_H
 
 // Comparison function suitable for qsort
 inline int compare_float(const void *p1, const void *p2)

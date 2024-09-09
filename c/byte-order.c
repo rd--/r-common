@@ -1,3 +1,5 @@
+/* https://justine.lol/endian.html */
+
 #include <string.h>
 
 #include "byte-order.h"
