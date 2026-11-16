@@ -1,5 +1,5 @@
-#ifndef _COMMON_HASH_H
-#define _COMMON_HASH_H
+#ifndef R_COMMON_C_HASH_H
+#define R_COMMON_C_HASH_H
 
 #include <stdint.h>
 
@@ -7,12 +7,12 @@
 inline int32_t int32_hash(int32_t inKey)
 {
 	uint32_t hash = (uint32_t)inKey;
-	hash += ~(hash << 15);
-	hash ^= hash >> 10;
-	hash += hash << 3;
-	hash ^= hash >> 6;
-	hash += ~(hash << 11);
-	hash ^= hash >> 16;
+	hash += ~(hash << 15U);
+	hash ^= hash >> 10U;
+	hash += hash << 3U;
+	hash ^= hash >> 6U;
+	hash += ~(hash << 11U);
+	hash ^= hash >> 16U;
 	return (int32_t)hash;
 }
 
@@ -20,14 +20,14 @@ inline int32_t int32_hash(int32_t inKey)
 inline int64_t int64_hash(int64_t inKey)
 {
 	uint64_t hash = (uint64_t)inKey;
-	hash += ~(hash << 32);
-	hash ^= (hash >> 22);
-	hash += ~(hash << 13);
-	hash ^= (hash >> 8);
-	hash += (hash << 3);
-	hash ^= (hash >> 15);
-	hash += ~(hash << 27);
-	hash ^= (hash >> 31);
+	hash += ~(hash << 32U);
+	hash ^= (hash >> 22U);
+	hash += ~(hash << 13U);
+	hash ^= (hash >> 8U);
+	hash += (hash << 3U);
+	hash ^= (hash >> 15U);
+	hash += ~(hash << 27U);
+	hash ^= (hash >> 31U);
 	return (int64_t)hash;
 }
 

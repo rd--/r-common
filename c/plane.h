@@ -1,5 +1,5 @@
-#ifndef _PLANE_H
-#define _PLANE_H
+#ifndef R_COMMON_C_PLANE_H
+#define R_COMMON_C_PLANE_H
 
 #include "vector.h"
 #include <stdbool.h>
@@ -8,9 +8,12 @@ typedef struct {
 	v3 n;
 	f32 d;
 } plane;
-enum side { front,
+
+enum side {
+	front,
 	back,
-	coincide };
+	coincide
+};
 
 plane make_plane(v3 n, f32 d);
 f32 point_plane_distance(plane p, v3 v);

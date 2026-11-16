@@ -1,5 +1,5 @@
-#ifndef _COMMON_HERMITE_H
-#define _COMMON_HERMITE_H
+#ifndef R_COMMON_C_HERMITE_H
+#define R_COMMON_C_HERMITE_H
 
 #define R float
 

@@ -32,7 +32,7 @@ c32 c32_div(c32 a, c32 b)
 
 f32 c32_mod(c32 a)
 {
-	return sqrt(a.r * a.r + a.i * a.i);
+	return sqrtf(a.r * a.r + a.i * a.i);
 }
 
 c32 c32_conj(c32 a)

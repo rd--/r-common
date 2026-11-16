@@ -55,10 +55,9 @@ f32 v3_mag(v3 v)
 v3 v3_unitise(v3 v)
 {
 	f32 l = v3_mag(v);
-	if (l == 0.0) {
-		fprintf(stderr, "v3_unitise: v3_mag==0\n");
+	if (l == 0.0F) {
+		(void)fprintf(stderr, "v3_unitise: v3_mag==0\n");
 		return v;
-	} else {
-		return v3_mul(1.0 / l, v);
 	}
+	return v3_mul(1.0F / l, v);
 }

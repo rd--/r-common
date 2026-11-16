@@ -9,7 +9,7 @@ R fosCoefStep(R in, R a0, R a1, R b1, R *in1, R *out1);
 R sosCoefStep(R in, R a0, R a1, R a2, R b1, R b2, R *in1, R *in2, R *out1, R *out2);
 R iir2CoefStep(R in, R a0, R b1, R b2, R *out1, R *out2);
 
-void bwLpfOrHpfCoef(bool isHpf, R sr, R freq, R rq, R *a0, R *a1, R *a2, R *b1, R *b2);
+void bwLpfOrHpfCoef(bool isHpf, R sr, R freq, R *a0, R *a1, R *a2, R *b1, R *b2);
 void rlpfCoef(R radiansPerSample, R freq, R rq, R *a0, R *b1, R *b2);
 void resonzCoef(R radiansPerSample, R freq, R rq, R *a0, R *b1, R *b2);
 
@@ -23,7 +23,7 @@ typedef struct {
 	R a0, b1, b2;
 } iir2;
 
-sos bwLpfOrHpf(bool isHpf, R sr, R freq, R rq);
+sos bwLpfOrHpf(bool isHpf, R sr, R freq);
 iir2 rlpf(R radiansPerSample, R freq, R rq);
 iir2 resonz(R radiansPerSample, R freq, R rq);
 

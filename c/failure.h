@@ -1,22 +1,22 @@
-#ifndef _COMMON_FAILURE_H
-#define _COMMON_FAILURE_H
+#ifndef R_COMMON_C_FAILURE_H
+#define R_COMMON_C_FAILURE_H
 
-#include <stdlib.h>
+#include <unistd.h>
 
 #ifndef FAILURE
-#define FAILURE exit(1)
+#define FAILURE _exit(1)
 #endif
 
 #define die(...) \
 	{ \
-		fprintf(stderr, __VA_ARGS__); \
-		exit(1); \
+		(void)fprintf(stderr, __VA_ARGS__); \
+		_exit(1); \
 	}
 
 #define die_when(x, ...) \
 	if (x) { \
-		fprintf(stderr, __VA_ARGS__); \
-		exit(1); \
+		(void)fprintf(stderr, __VA_ARGS__); \
+		_exit(1); \
 	}
 
 #endif

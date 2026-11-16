@@ -1,5 +1,5 @@
-#ifndef _COMMON_INT_H
-#define _COMMON_INT_H
+#ifndef R_COMMON_C_INT_H
+#define R_COMMON_C_INT_H
 
 #include <stdint.h>
 

@@ -19,6 +19,6 @@ void disable_denormals(void)
 #else
 void disable_denormals(void)
 {
-	fprintf(stderr, "disable_denormals: not implemented");
+	(void)fprintf(stderr, "disable_denormals: not implemented");
 }
 #endif

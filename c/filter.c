@@ -28,7 +28,7 @@ R iir2CoefStep(R x0, R b0, R a1, R a2, R *y1, R *y2)
 }
 
 // Butterworth low pass or high pass Sos filter coefficients.
-void bwLpfOrHpfCoef(bool isHpf, R sr, R freq, R rq, R *a0, R *a1, R *a2, R *b1, R *b2)
+void bwLpfOrHpfCoef(bool isHpf, R sr, R freq, R *a0, R *a1, R *a2, R *b1, R *b2)
 {
 	R f = freq * PI / sr;
 	R c = isHpf ? tan(f) : 1 / tan(f);
@@ -71,10 +71,10 @@ R fosStep(R in, fos c, fosState s) { return fosCoefStep(in, c.a0, c.a1, c.b1, &s
 R sosStep(R in, sos c, sosState s) { return sosCoefStep(in, c.a0, c.a1, c.a2, c.b1, c.b2, &s.in1, &s.in2, &s.out1, &s.out2); }
 R iir2Step(R in, iir2 c, iir2State s) { return iir2CoefStep(in, c.a0, c.b1, c.b2, &s.out1, &s.out2); }
 
-sos bwLpfOrHpf(bool isHpf, R sr, R freq, R rq)
+sos bwLpfOrHpf(bool isHpf, R sr, R freq)
 {
 	sos c;
-	bwLpfOrHpfCoef(isHpf, sr, freq, rq, &c.a0, &c.a1, &c.a2, &c.b1, &c.b2);
+	bwLpfOrHpfCoef(isHpf, sr, freq, &c.a0, &c.a1, &c.a2, &c.b1, &c.b2);
 	return c;
 }
 iir2 rlpf(R radiansPerSample, R freq, R rq)
