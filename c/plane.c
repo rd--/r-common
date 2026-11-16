@@ -36,6 +36,7 @@ enum side half_space(plane p, v3 v)
 	if (d < 0.0F) {
 		return back;
 	}
+	/* clang complains about this, gcc is sanguine */
 	if (isnan(d)) {
 		(void)fprintf(stderr, "half_space: nan: %f\n", d);
 		return coincide;
