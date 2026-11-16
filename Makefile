@@ -5,8 +5,9 @@ clean:
 	(cd c ; make clean)
 
 push-all:
-	git push git@gitlab.com:rd--/r-common.git
-	ssh rd@rohandrape.net "(cd sw/r-common ; git pull https://gitlab.com/rd--/r-common.git)"
+	r.gitlab-push.sh r-common
+	r.github-push.sh r-common
 
 push-tags:
-	git push git@gitlab.com:rd--/r-common.git --tags
+	r.gitlab-push.sh r-common --tags
+	r.github-push.sh r-common --tags
