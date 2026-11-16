@@ -1,3 +1,5 @@
+#include <cstdlib>
+
 #include "pluginterfaces/vst2.x/aeffectx.h" /* VST SDK */
 
 #include "dl.h"
