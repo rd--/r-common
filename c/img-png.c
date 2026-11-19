@@ -68,9 +68,9 @@ bool read_png_data(FILE *fp, i32 w, i32 h, i32 depth, u8 *data)
 	return true;
 }
 
-bool load_png_rgb8(char *fn, i32 *w, i32 *h, u8 **frm)
+bool load_png_rgb8(const char *fn, i32 *w, i32 *h, u8 **frm)
 {
-	FILE *fp = fopen(fn, "r");
+	FILE *fp = fopen(fn, "rb");
 	if (!fp) {
 		fprintf(stderr, "load_png_rgb8: fopen failed\n");
 		return false;
@@ -94,7 +94,7 @@ bool load_png_rgb8(char *fn, i32 *w, i32 *h, u8 **frm)
 	return true;
 }
 
-u8 **load_png_rgb8_seq(char **fn, i32 n, i32 *w, i32 *h)
+u8 **load_png_rgb8_seq(const char **fn, i32 n, i32 *w, i32 *h)
 {
 	u8 **frm = (u8 **)xmalloc(sizeof(u8 *) * n);
 	for (i32 i = 0; i < n; i++) {

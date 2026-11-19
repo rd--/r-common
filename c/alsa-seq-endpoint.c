@@ -195,7 +195,7 @@ void alsa_seq_endpoint_connect_to(snd_seq_t *seq, int port,
 	self = snd_seq_client_id(seq);
 	int i;
 	for (i = 0; i < e_n; i++) {
-		if (e[i].source && e[i].client != self) {
+		if (e[i].destination && e[i].client != self) {
 			snd_seq_connect_to(seq, port, e[i].client, e[i].port);
 		}
 	}

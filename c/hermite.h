@@ -1,8 +1,8 @@
 #ifndef R_COMMON_C_HERMITE_H
 #define R_COMMON_C_HERMITE_H
 
-#define R float
+#include "float.h"
 
-R hermite(R x, R y0, R y1, R y2, R y3);
+f32 hermitef(f32 x, f32 y0, f32 y1, f32 y2, f32 y3);
 
 #endif

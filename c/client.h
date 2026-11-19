@@ -1,13 +1,18 @@
 #ifndef _COMMON_CLIENT_H
 #define _COMMON_CLIENT_H
 
+#include <stdbool.h>
+#include <stdio.h>
+
+#include <netinet/in.h>
+
 #include "int.h"
 
 typedef struct
 {
 	struct sockaddr_in address;
 	i32 mask;
-	i8 in_use;
+	bool in_use;
 } client_t;
 
 typedef struct

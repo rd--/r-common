@@ -17,7 +17,7 @@ client_register_t *alloc_client_register(i32 n)
 	r->c = (client_t *)xmalloc(n * sizeof(client_t));
 	i32 i;
 	for (i = 0; i < r->n; i++) {
-		r->c[i].in_use = 0;
+		r->c[i].in_use = false;
 		r->c[i].mask = 0;
 	}
 	return r;
@@ -66,7 +66,7 @@ void edit_client_register(client_register_t *r,
 		if (!r->c[i].in_use) {
 			xmemcpy(&(r->c[i].address), &addr, sizeof(addr));
 			r->c[i].mask = mask;
-			r->c[i].in_use = 1;
+			r->c[i].in_use = true;
 			return;
 		}
 	}

@@ -11,3 +11,6 @@ push-all:
 push-tags:
 	r.gitlab-push.sh r-common --tags
 	r.github-push.sh r-common --tags
+
+zip-c-files:
+	zip r-common-c.zip c/*.c c/*.h c/Makefile c/README

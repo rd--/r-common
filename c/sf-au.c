@@ -31,7 +31,7 @@ void write_header(FILE *fp, i32 nc, i32 nf, i32 sr)
 	write_i32(fp, 0); /* 28-32: align */
 }
 
-void write_au_f32(char *nm, i32 nc, i32 nf, i32 sr, f32 *d)
+void write_au_f32(const char *nm, i32 nc, i32 nf, i32 sr, const f32 *d)
 {
 	FILE *fp;
 	i32 i;
@@ -84,7 +84,7 @@ void read_header(FILE *fp, i32 *nc, i32 *nf, i32 *sr)
 	}
 }
 
-f32 *read_au_f32(char *nm, i32 *nc, i32 *nf, i32 *sr)
+f32 *read_au_f32(const char *nm, i32 *nc, i32 *nf, i32 *sr)
 {
 	FILE *fp;
 	i32 i;

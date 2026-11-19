@@ -1,10 +1,10 @@
 #ifndef R_COMMON_C_BIQUAD_H
 #define R_COMMON_C_BIQUAD_H
 
-#define R double
+#include "float.h"
 
-R biquad_normalised_direct_form_1(R x0, R b0, R b1, R b2, R a1, R a2, R *x1, R *x2, R *y1, R *y2);
-R biquad_normalised_direct_form_2(R x0, R b0, R b1, R b2, R a1, R a2, R *w1, R *w2);
-R biquad_transposed_normalised_direct_form_2(R x0, R b0, R b1, R b2, R a1, R a2, R *w1, R *w2);
+f64 biquad_normalised_direct_form_1(f64 x0, f64 b0, f64 b1, f64 b2, f64 a1, f64 a2, f64 *x1, f64 *x2, f64 *y1, f64 *y2);
+f64 biquad_normalised_direct_form_2(f64 x0, f64 b0, f64 b1, f64 b2, f64 a1, f64 a2, f64 *w1, f64 *w2);
+f64 biquad_transposed_normalised_direct_form_2(f64 x0, f64 b0, f64 b1, f64 b2, f64 a1, f64 a2, f64 *w1, f64 *w2);
 
 #endif

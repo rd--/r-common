@@ -29,7 +29,7 @@ f32 segment_transfer_interpolate_logarithmic(f32 left, f32 right, f32 index)
 #define SEGMENT_TRANSFER_X(index) (data[((index)*2)])
 #define SEGMENT_TRANSFER_Y(index) (data[((index)*2) + 1])
 
-f32 segment_transfer_lookup_linear(f32 *data, int size, f32 x)
+f32 segment_transfer_lookup_linear(const f32 *data, int size, f32 x)
 {
 	int size_2 = size / 2;
 	if (size_2 == 1) {

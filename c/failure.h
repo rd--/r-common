@@ -1,6 +1,7 @@
 #ifndef R_COMMON_C_FAILURE_H
 #define R_COMMON_C_FAILURE_H
 
+#include <stdio.h>
 #include <unistd.h>
 
 #ifndef FAILURE

@@ -1,5 +1,5 @@
-#ifndef _COMMON_QUANTIZE_C
-#define _COMMON_QUANTIZE_C
+#ifndef _R_COMMON_C_QUANTIZE_H
+#define _R_COMMON_C_QUANTIZE_H
 
 #include "float.h"
 

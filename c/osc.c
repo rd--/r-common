@@ -122,7 +122,7 @@ void osc_coerce(u8 u, u8 d, osc_data_t *o)
 	} else if (u == 't' && d == 'i') {
 		o->t = (u64)o->i;
 	} else if (u == 't' && d == 'h') {
-		o->t = (u64)o->t;
+		o->t = (u64)o->h;
 	} else if (u == 't' && d == 'f') {
 		o->t = (u64)floorf(o->f);
 	} else if (u == 't' && d == 'd') {
@@ -142,7 +142,7 @@ void osc_coerce(u8 u, u8 d, osc_data_t *o)
 	} else if (u == 'd' && d == 't') {
 		o->d = (f64)o->t;
 	} else if (u == 'd' && d == 'f') {
-		o->d = (f64)o->d;
+		o->d = (f64)o->f;
 	} else {
 		fprintf(stderr, "osc_coerce: illegal coercion '%c' <- '%c'\n", u, d);
 		FAILURE;

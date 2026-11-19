@@ -1,11 +1,9 @@
-#ifndef _COMMON_ALSA_SEQ_LISTENER_H
-#define _COMMON_ALSA_SEQ_LISTENER_H
+#ifndef _R_COMMON_C_ALSA_SEQ_LISTENER_H
+#define _R_COMMON_C_ALSA_SEQ_LISTENER_H
 
 #include <alsa/asoundlib.h>
 #include <pthread.h>
-#include <stdbool.h>
 #include <stdint.h>
-#include <unistd.h>
 
 typedef void (*alsa_seq_listener_recv_t)(void *, const snd_seq_event_t *, const unsigned char *, int);
 

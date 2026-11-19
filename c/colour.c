@@ -44,6 +44,6 @@ void ega_rgb_lookup_i32(i32 ix, u8 *c)
 /* n is in (0.0,1.0) */
 void ega_rgb_lookup_f32(f32 n, u8 *c)
 {
-	i32 ix = i32_min((i32)(n * 64.0F), 64);
+	i32 ix = i32_min((i32)(n * 63.0F), 63);
 	xmemcpy(c, ega_rgb_colours[ix], 3);
 }

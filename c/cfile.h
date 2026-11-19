@@ -1,7 +1,6 @@
 #ifndef _COMMON_CFILE_H
 #define _COMMON_CFILE_H
 
-#include "failure.h"
 #include <stdint.h>
 #include <stdio.h>
 

@@ -2,6 +2,7 @@
 
 #include "bessel.h"
 
+// Modified Bessel I0
 float bessi0(float x)
 {
 	if (x == 0.0F || fabsf(x) > 15.0F) {

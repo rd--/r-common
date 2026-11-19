@@ -26,13 +26,13 @@ int cq_index_i(int n, int ri, int wi)
 	return ai;
 }
 
-float cq_access_i(float *s, int n, int ri, int wi)
+float cq_access_i(const float *s, int n, int ri, int wi)
 {
 	int i = cq_index_i(n, ri, wi);
 	return s[i];
 }
 
-float cq_access(float *s, int n, float ri, int wi)
+float cq_access(const float *s, int n, float ri, int wi)
 {
 	int i = cq_index(n, ri, wi);
 	return signal_interpolate_circular(s, n, i);

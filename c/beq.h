@@ -2,23 +2,24 @@
 #define R_COMMON_C_BEQ_H
 
 #include "filter.h"
+#include "float.h"
 
-void beqLowPassCoef(R sr, R freq, R rq, R *a0, R *a1, R *a2, R *b1, R *b2);
-void beqHiPassCoef(R sr, R freq, R rq, R *a0, R *a1, R *a2, R *b1, R *b2);
-void beqAllPassCoef(R sr, R freq, R rq, R *a0, R *a1, R *a2, R *b1, R *b2);
-void beqBandPassCoef(R sr, R freq, R bw, R *a0, R *a1, R *a2, R *b1, R *b2);
-void beqBandStopCoef(R sr, R freq, R bw, R *a0, R *a1, R *a2, R *b1, R *b2);
-void beqPeakEqCoef(R sr, R freq, R rq, R db, R *a0, R *a1, R *a2, R *b1, R *b2);
-void beqLowShelfCoef(R sr, R freq, R rs, R db, R *a0, R *a1, R *a2, R *b1, R *b2);
-void beqHiShelfCoef(R sr, R freq, R rs, R db, R *a0, R *a1, R *a2, R *b1, R *b2);
+void beqLowPassCoef(f64 sr, f64 freq, f64 rq, f64 *a0, f64 *a1, f64 *a2, f64 *b1, f64 *b2);
+void beqHiPassCoef(f64 sr, f64 freq, f64 rq, f64 *a0, f64 *a1, f64 *a2, f64 *b1, f64 *b2);
+void beqAllPassCoef(f64 sr, f64 freq, f64 rq, f64 *a0, f64 *a1, f64 *a2, f64 *b1, f64 *b2);
+void beqBandPassCoef(f64 sr, f64 freq, f64 bw, f64 *a0, f64 *a1, f64 *a2, f64 *b1, f64 *b2);
+void beqBandStopCoef(f64 sr, f64 freq, f64 bw, f64 *a0, f64 *a1, f64 *a2, f64 *b1, f64 *b2);
+void beqPeakEqCoef(f64 sr, f64 freq, f64 rq, f64 db, f64 *a0, f64 *a1, f64 *a2, f64 *b1, f64 *b2);
+void beqLowShelfCoef(f64 sr, f64 freq, f64 rs, f64 db, f64 *a0, f64 *a1, f64 *a2, f64 *b1, f64 *b2);
+void beqHiShelfCoef(f64 sr, f64 freq, f64 rs, f64 db, f64 *a0, f64 *a1, f64 *a2, f64 *b1, f64 *b2);
 
-sos beqLowPass(R sr, R freq, R rq);
-sos beqHiPass(R sr, R freq, R rq);
-sos beqAllPass(R sr, R freq, R rq);
-sos beqBandPass(R sr, R freq, R bw);
-sos beqBandStop(R sr, R freq, R bw);
-sos beqPeakEq(R sr, R freq, R rq, R db);
-sos beqLowShelf(R sr, R freq, R rs, R db);
-sos beqHiShelf(R sr, R freq, R rs, R db);
+sos beqLowPass(f64 sr, f64 freq, f64 rq);
+sos beqHiPass(f64 sr, f64 freq, f64 rq);
+sos beqAllPass(f64 sr, f64 freq, f64 rq);
+sos beqBandPass(f64 sr, f64 freq, f64 bw);
+sos beqBandStop(f64 sr, f64 freq, f64 bw);
+sos beqPeakEq(f64 sr, f64 freq, f64 rq, f64 db);
+sos beqLowShelf(f64 sr, f64 freq, f64 rs, f64 db);
+sos beqHiShelf(f64 sr, f64 freq, f64 rs, f64 db);
 
 #endif

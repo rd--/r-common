@@ -1,5 +1,7 @@
-#ifndef _COMMON_XIMG_H
-#define _COMMON_XIMG_H
+#ifndef _R_COMMON_C_XIMG_H
+#define _R_COMMON_C_XIMG_H
+
+#include <stdint.h>
 
 #include <X11/Intrinsic.h>
 #include <X11/Xatom.h>

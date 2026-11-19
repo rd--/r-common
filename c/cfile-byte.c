@@ -1,5 +1,6 @@
 #include <stdint.h>
 #include <stdio.h>
+#include <stdio.h>
 
 #include "byte-order.h"
 #include "cfile-byte.h"
@@ -10,7 +11,7 @@
 	tag fread_##tag(FILE *fp) \
 	{ \
 		tag n; \
-		xfread(&n, 4, 1, fp); \
+		xfread(&n, sizeof(n), 1, fp); \
 		return ntoh_##tag(n); \
 	}
 

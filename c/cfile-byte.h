@@ -1,5 +1,5 @@
-#ifndef _COMMON_CFILE_BYTE_H
-#define _COMMON_CFILE_BYTE_H
+#ifndef _R_COMMON_C_CFILE_BYTE_H
+#define _R_COMMON_C_CFILE_BYTE_H
 
 #include "float.h"
 #include "int.h"
